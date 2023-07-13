@@ -96,36 +96,13 @@ function send(req) {
   });
 }
 
-function loading() {
-  setTimeout(function () {
-    $("#spinner").css("display", "block");
-  }, 500); // 2000ms = 2초 지연시간
-}
-
-function loading_end() {
-  setTimeout(function () {
-    $("#spinner").css("display", "none");
-  }, 2000);
-}
 $(document).ready(function () {
-  //배너순환
-  rotateBanner();
-  loading_end();
+
 
   //레이아웃 크기조절
   $(".banner").height($(".banner").width() * 0.6);
-  $("#menu_list").width($(".head").width());
-  $("#menu_list").height($("#menu_list").width()* 0.4);
-  $(".product_info_top>div").height($(".product_info_top>div").width());
-  
-  for (let i = 0; i < $(".product_info_top_left").children().length-1; i++) {
-    $(".product_info_top_left_nav").append(`<div class="product_info_top_left_nav_in button" data-json='{"event_type": "product_banner_img_select", "event_data": "none", "url": "none", "type": "none", "data": "none"}'></div>`);
-  }
   $(window).resize(function () {
     $(".banner").height($(".banner").width() * 0.6);
-    $("#menu_list").width($(".head").width());
-    $("#menu_list").height($("#menu_list").width()* 0.4);
-    $(".product_info_top>div").height($(".product_info_top>div").width());
   });
 
   //클릭이벤트
@@ -145,37 +122,6 @@ $(document).ready(function () {
     console.log("event_type : " + json.event_type);
     console.log("event_data : " + json.event_data);
     switch (json.event_type) {
-      //창닫기
-      case "close":
-        $(this).closest(".pop").hide();
-        break;
-
-      // 창열기
-      case "open":
-        $("#" + json.event_data).stop().show();
-        $("#" + json.event_data).css("display", "block");
-        break;
-
-    //menu 열고닫기
-    case "menu_list_view":
-      $("#menu_list_view").stop().slideToggle();
-    break;
-
-    case "menu_list_select":
-        $("#menu_list_items>div").css("display", "none");
-        $("#" + json.event_data).css("display", "flex");
-    break;
-
-    case "product_banner_img_select":
-      $(this).closest(".product_info_top_left").find(".product_banner_img").css("display","none");
-      $(this).closest(".product_info_top_left").find(".product_banner_img").eq($(this).index()).css("display","block");
-    break;
-    case "list_mobile":
-      $("#" + json.event_data).stop().slideToggle();
-    break;
-      case "nav_main_slide":
-        $(this).find(".nav_main_list").stop().slideToggle();
-      break;
 
       default:
         console.log("이벤트타입 없음");
@@ -188,13 +134,6 @@ $(document).ready(function () {
     console.log(json.event_type);
     console.log(json.event_data);
     switch(json.event_type){
-        case "product_search_list":
-            $(".product_search_flexs>div").css("display","none");
-            $("#" + json.event_data).css("display","block");
-            $("#" + json.event_data + ">.product_search_toggle").stop().slideToggle();
-            $("#" + json.event_data + ">.product_search_toggle").css("display","flex");
-
-        break;
         default:
             console.log("호버이벤트 미등록");
         break;
