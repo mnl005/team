@@ -170,8 +170,11 @@ $(document).ready(function () {
     case "product_banner_img_select":
       $(this).closest(".product_info_top_left").find(".product_banner_img").css("display","none");
       $(this).closest(".product_info_top_left").find(".product_banner_img").eq($(this).index()).css("display","block");
-     
     break;
+      case "nav_main_slide":
+        $(this).find(".nav_main_list").stop().slideToggle();
+       
+      break;
       default:
         console.log("이벤트타입 없음");
         break;
