@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+
+<!-- <link rel="stylesheet" href="/css/market.css" /> -->
+<link rel="stylesheet" href="/pro/src/main/resources/static/css/market.css">
+<body>
+    <div id="spinner"></div>
+
+    <div class="pop" id="product_info">
+        <div class="button close" 
+        data-json='{"event_type": "close", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+        >
+        <span class="material-symbols-outlined">
+            arrow_back_ios
+            </span>
+        </div>
+
+        <div class="product_info_top">
+            <div class="product_info_top_left">
+                <div class="product_banner_img" style="background-color: red;"></div>
+                <div class="product_banner_img" style="background-color: rgb(90, 73, 73);"></div>
+                <div class="product_banner_img" style="background-color: rgb(226, 96, 96);"></div>
+                <div class="product_info_top_left_nav"></div>
+            </div>
+
+            <div class="product_info_top_right">
+                <div id="brand">맥심</div>
+                <div id="name">맥심 원두커피 시그니처</div>
+                <div id="review">154 개의 상품평</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="top">
+        <div class="button">
+            로그인
+        </div>
+        <div class="button">
+            회원가입
+        </div>
+        <div class="button">
+            나의정보
+        </div>
+        <div class="button">
+            고객센터
+        </div>
+    </div>
+
+    <div class="title">
+        중고거래
+    </div>
+
+
+    <div class="head">
+            <span id="menu" class="material-symbols-outlined button"
+            data-json='{"event_type": "menu_list_view", "event_data": "none", "url": "none", "type": "none", "data": "none"}'>
+                menu
+                </span>
+                <form id="search">
+                    <input type="text" name="search" placeholder="검색어를 입력하세요">
+                    <button type="button"><span class="material-symbols-outlined">
+                        search
+                        </span></button>
+                </form>
+
+                <div id="menu_list">
+                    <div id="menu_list_nav">
+                        <div class="button"
+                        data-json='{"event_type": "menu_list_select", "event_data": "product_search", "url": "none", "type": "none", "data": "none"}'
+                        >상품탐색</div>
+                        <div class="button"
+                        data-json='{"event_type": "menu_list_select", "event_data": "product_suggest", "url": "none", "type": "none", "data": "none"}'
+                        >추천상품</div>
+                        <div class="button"
+                        data-json='{"event_type": "menu_list_select", "event_data": "product_new", "url": "none", "type": "none", "data": "none"}'
+                        >오늘의 신상</div>
+                        <div class="button"
+                        data-json='{"event_type": "menu_list_select", "event_data": "product_now", "url": "none", "type": "none", "data": "none"}'
+                        >실시간급상승</div>
+                        <div class="button"
+                        data-json='{"event_type": "menu_list_select", "event_data": "product_sale", "url": "none", "type": "none", "data": "none"}'
+                        >특가세일</div>
+                    </div>
+
+                    <div id="menu_list_items">
+
+                        <div id="product_search">
+
+                            <div class="product_search_flex">
+                                <div class="product_search_list button hover"
+                                data-json='{"event_type": "product_search_list", "event_data": "product_all", "url": "none", "type": "none", "data": "none"}'
+                                >모든상품</div>
+                                <div class="product_search_list button hover"
+                                data-json='{"event_type": "product_search_list", "event_data": "product_theme", "url": "none", "type": "none", "data": "none"}'
+                                >테마별</div>
+                                <div class="product_search_list button hover"
+                                data-json='{"event_type": "product_search_list", "event_data": "product_season", "url": "none", "type": "none", "data": "none"}'
+                                >시즌별</div>
+                                <div class="product_search_list button hover"
+                                data-json='{"event_type": "product_search_list", "event_data": "product_exhibitions", "url": "none", "type": "none", "data": "none"}'
+                                >기획상품</div>
+                            </div>
+                            <div class="product_search_flexs">
+                                <div id="product_all">
+                                    <div class="product_search_toggle button hover"
+                                    data-json='{"event_type": "product_search_list", "event_data": "product_all", "url": "none", "type": "none", "data": "none"}'
+                                    >
+                                        <div>모든상품</div>
+                                        <div>바로가기</div>
+                                    </div>
+                                </div>
+                                <div id="product_theme">
+                                    <div class="product_search_toggle button hover"
+                                    data-json='{"event_type": "product_search_list", "event_data": "product_theme", "url": "none", "type": "none", "data": "none"}'
+                                    >
+                                        <div>테마별 상품</div>
+                                        <div>바로가기</div>
+                                    </div>
+                                </div>
+                                <div id="product_season">
+                                    <div class="product_search_toggle button hover"
+                                    data-json='{"event_type": "product_search_list", "event_data": "product_season", "url": "none", "type": "none", "data": "none"}'
+                                    >
+                                        <div>시즌별 상품</div>
+                                        <div>바로가기</div>
+                                    </div>
+                                </div>
+                                <div id="product_exhibitions">
+                                    <div class="product_search_toggle button hover"
+                                    data-json='{"event_type": "product_search_list", "event_data": "product_exhibitions", "url": "none", "type": "none", "data": "none"}'
+                                    >
+                                        <div>기획상품</div>
+                                        <div>바로가기</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div id="product_suggest">
+                            <div>바로가기</div>
+                        </div>
+                        <div id="product_new">product_new</div>
+                        <div id="product_now">product_now</div>
+                        <div id="product_sale">product_sale</div>
+                    </div>
+                </div>
+    </div>
+
+    <div class="suggest">
+        <div class="suggest_text">추천검색어</div>
+        <div class="suggest_box">
+            <div>홍삼세트</div>
+            <div>안마기</div>
+            <div>선풍기</div>
+            <div>에어컨</div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div style="background-color: aquamarine;"></div>
+        <div style="background-color: rgb(97, 156, 136);"></div>
+        <div style="background-color: rgb(51, 75, 67);"></div>
+    </div>
+
+    <!-- <script src="/js/sns.js"></script> -->
+    <script src="/pro/src/main/resources/static/js/market.js"></script>
+</body>
+</html>
