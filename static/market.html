@@ -31,7 +31,16 @@
             arrow_back_ios
             </span>
         </div>유저정보</div>
-    <div class="pop" id="product_info">
+
+        <div class="pop" id="service">        <div class="button close" 
+            data-json='{"event_type": "close", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+            >
+            <span class="material-symbols-outlined">
+                arrow_back_ios
+                </span>
+            </div>고객센터</div>
+
+    <div class="pop" id="product_info" style="display: block;">
         <div class="button close" 
         data-json='{"event_type": "close", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
         >
@@ -95,6 +104,59 @@
 
     </div>
 
+    <div id="menu_list_view">
+        <span id="menu" class="material-symbols-outlined button"
+        data-json='{"event_type": "menu_list_view", "event_data": "none", "url": "none", "type": "none", "data": "none"}'>
+            menu
+            </span>
+            <div class="menu_list_mobile button"
+            data-json='{"event_type": "list_mobile", "event_data": "list1", "url": "none", "type": "none", "data": "none"}'>
+
+                상품 <span class="material-symbols-outlined">
+                    expand_more
+                    </span>
+            </div>
+            <div class="menu_list_mobile_in" id="list1">
+                <div class="button">카테고리</div>
+                <div class="button">인기상품</div>
+                <div class="button">세일상품</div>
+                <div class="button">기획상품</div>
+            </div>
+            <div class="menu_list_mobile button"
+            data-json='{"event_type": "list_mobile", "event_data": "list2", "url": "none", "type": "none", "data": "none"}'>
+                상품등록 <span class="material-symbols-outlined">
+                    expand_more
+                    </span>
+            </div>
+            <div class="menu_list_mobile_in" id="list2">
+                <div class="button">등록설명</div>
+                <div class="button">등록하기</div>
+                <div class="button">내상품조회</div>
+            </div>
+            <div class="menu_list_mobile button"
+            data-json='{"event_type": "list_mobile", "event_data": "list3", "url": "none", "type": "none", "data": "none"}'>
+                이벤트 <span class="material-symbols-outlined">
+                    expand_more
+                    </span>
+            </div>
+            <div class="menu_list_mobile_in" id="list3">
+                <div class="button">오늘의 운세</div>
+                <div class="button">랜덤박스</div>
+                <div class="button">룰렛</div>
+            </div>
+            <div class="menu_list_mobile button"
+            data-json='{"event_type": "list_mobile", "event_data": "list4", "url": "none", "type": "none", "data": "none"}'>
+                소통창구 <span class="material-symbols-outlined">
+                    expand_more
+                    </span>
+            </div>
+            <div class="menu_list_mobile_in" id="list4">
+                <div class="button">공지사항</div>
+                <div class="button">자유게시판</div>
+                <div class="button">룰렛</div>
+            </div>
+        </div>
+    <!-- _______________________________________________ -->
     <div class="nav_main1">
         <div class="shop_title button">아모르쇼핑</div>
         <div id="nav_main_flex"></div>
@@ -139,6 +201,11 @@
  
 
     <div class="top">
+        <span id="menu" class="material-symbols-outlined button"
+        data-json='{"event_type": "menu_list_view", "event_data": "none", "url": "none", "type": "none", "data": "none"}'>
+            menu
+            </span>
+        <div class="top_flex"></div>
         <div class="button"
         data-json='{"event_type": "open", "event_data": "login", "url": "none", "type": "none", "data": "none"}'
         >
@@ -162,99 +229,12 @@
 
 
     <div class="head">
-            <span id="menu" class="material-symbols-outlined button"
-            data-json='{"event_type": "menu_list_view", "event_data": "none", "url": "none", "type": "none", "data": "none"}'>
-                menu
-                </span>
                 <form id="search">
                     <input type="text" name="search" placeholder="검색어를 입력하세요">
                     <button type="button"><span class="material-symbols-outlined">
                         search
                         </span></button>
                 </form>
-
-                <div id="menu_list">
-                    <div id="menu_list_nav">
-                        <div class="button"
-                        data-json='{"event_type": "menu_list_select", "event_data": "product_search", "url": "none", "type": "none", "data": "none"}'
-                        >상품탐색</div>
-                        <div class="button"
-                        data-json='{"event_type": "menu_list_select", "event_data": "product_suggest", "url": "none", "type": "none", "data": "none"}'
-                        >추천상품</div>
-                        <div class="button"
-                        data-json='{"event_type": "menu_list_select", "event_data": "product_new", "url": "none", "type": "none", "data": "none"}'
-                        >오늘의 신상</div>
-                        <div class="button"
-                        data-json='{"event_type": "menu_list_select", "event_data": "product_now", "url": "none", "type": "none", "data": "none"}'
-                        >실시간급상승</div>
-                        <div class="button"
-                        data-json='{"event_type": "menu_list_select", "event_data": "product_sale", "url": "none", "type": "none", "data": "none"}'
-                        >특가세일</div>
-                    </div>
-
-                    <div id="menu_list_items">
-
-                        <div id="product_search">
-
-                            <div class="product_search_flex">
-                                <div class="product_search_list button hover"
-                                data-json='{"event_type": "product_search_list", "event_data": "product_all", "url": "none", "type": "none", "data": "none"}'
-                                >모든상품</div>
-                                <div class="product_search_list button hover"
-                                data-json='{"event_type": "product_search_list", "event_data": "product_theme", "url": "none", "type": "none", "data": "none"}'
-                                >테마별</div>
-                                <div class="product_search_list button hover"
-                                data-json='{"event_type": "product_search_list", "event_data": "product_season", "url": "none", "type": "none", "data": "none"}'
-                                >시즌별</div>
-                                <div class="product_search_list button hover"
-                                data-json='{"event_type": "product_search_list", "event_data": "product_exhibitions", "url": "none", "type": "none", "data": "none"}'
-                                >기획상품</div>
-                            </div>
-                            <div class="product_search_flexs">
-                                <div id="product_all">
-                                    <div class="product_search_toggle button hover"
-                                    data-json='{"event_type": "product_search_list", "event_data": "product_all", "url": "none", "type": "none", "data": "none"}'
-                                    >
-                                        <div>모든상품</div>
-                                        <div>바로가기</div>
-                                    </div>
-                                </div>
-                                <div id="product_theme">
-                                    <div class="product_search_toggle button hover"
-                                    data-json='{"event_type": "product_search_list", "event_data": "product_theme", "url": "none", "type": "none", "data": "none"}'
-                                    >
-                                        <div>테마별 상품</div>
-                                        <div>바로가기</div>
-                                    </div>
-                                </div>
-                                <div id="product_season">
-                                    <div class="product_search_toggle button hover"
-                                    data-json='{"event_type": "product_search_list", "event_data": "product_season", "url": "none", "type": "none", "data": "none"}'
-                                    >
-                                        <div>시즌별 상품</div>
-                                        <div>바로가기</div>
-                                    </div>
-                                </div>
-                                <div id="product_exhibitions">
-                                    <div class="product_search_toggle button hover"
-                                    data-json='{"event_type": "product_search_list", "event_data": "product_exhibitions", "url": "none", "type": "none", "data": "none"}'
-                                    >
-                                        <div>기획상품</div>
-                                        <div>바로가기</div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div id="product_suggest">
-                            <div>바로가기</div>
-                        </div>
-                        <div id="product_new">product_new</div>
-                        <div id="product_now">product_now</div>
-                        <div id="product_sale">product_sale</div>
-                    </div>
-                </div>
     </div>
 
     <div class="suggest">
@@ -272,6 +252,70 @@
         <div style="background-color: rgb(97, 156, 136);"></div>
         <div style="background-color: rgb(51, 75, 67);"></div>
     </div>
+
+    <div class="select_main">
+        <div class="sort">
+            <span class="material-symbols-outlined">
+                sort
+                </span>
+                <span class="material-symbols-outlined">
+                    apps
+                    </span>
+        </div>
+
+        <div id="product_main">
+            <div class="product_one button">
+                <div class="product_img"></div>
+                <div class="product_name">기저귀</div>
+                <div class="product_price">3,234원</div>
+             
+                <div class="product_del">   <span class="material-symbols-outlined">
+                    local_shipping
+                    </span> 3~4일 소요</div>
+
+                <div class="product_btn1">
+                    장바구니 담기
+                </div>
+                <div class="product_btn2">
+                    바로구매
+                </div>
+            </div>
+            <div class="product_one button">
+                <div class="product_img"></div>
+                <div class="product_name">기저귀</div>
+                <div class="product_price">3,234원</div>
+             
+                <div class="product_del">   <span class="material-symbols-outlined">
+                    local_shipping
+                    </span> 3~4일 소요</div>
+
+                <div class="product_btn1">
+                    장바구니 담기
+                </div>
+                <div class="product_btn2">
+                    바로구매
+                </div>
+            </div>
+            <div class="product_one button">
+                <div class="product_img"></div>
+                <div class="product_name">기저귀</div>
+                <div class="product_price">3,234원</div>
+             
+                <div class="product_del">   <span class="material-symbols-outlined">
+                    local_shipping
+                    </span> 3~4일 소요</div>
+
+                <div class="product_btn1">
+                    장바구니 담기
+                </div>
+                <div class="product_btn2">
+                    바로구매
+                </div>
+            </div>
+        </div>
+
+    </div>
+  
 
     <script src="market.js"></script>
     <!-- <script src="/pro/src/main/resources/static/js/market.js"></script> -->

@@ -153,13 +153,12 @@ $(document).ready(function () {
       // 창열기
       case "open":
         $("#" + json.event_data).stop().show();
-        $("#" + json.event_data).css("display", "flex");
+        $("#" + json.event_data).css("display", "block");
         break;
 
     //menu 열고닫기
     case "menu_list_view":
-        $("#menu_list").slideToggle();
-        $("#menu_list").css("display", "flex");
+      $("#menu_list_view").stop().slideToggle();
     break;
 
     case "menu_list_select":
@@ -171,10 +170,13 @@ $(document).ready(function () {
       $(this).closest(".product_info_top_left").find(".product_banner_img").css("display","none");
       $(this).closest(".product_info_top_left").find(".product_banner_img").eq($(this).index()).css("display","block");
     break;
+    case "list_mobile":
+      $("#" + json.event_data).stop().slideToggle();
+    break;
       case "nav_main_slide":
         $(this).find(".nav_main_list").stop().slideToggle();
-       
       break;
+
       default:
         console.log("이벤트타입 없음");
         break;
