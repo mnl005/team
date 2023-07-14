@@ -12,7 +12,6 @@
   />
   <link rel="stylesheet" href="market.css" />
   <body>
-
     <div class="pop" id="product_info">
       <span
         class="material-symbols-outlined button close"
@@ -20,7 +19,7 @@
       >
         close
       </span>
-  
+
       <div class="product_info1">
         <div class="product_left">
           <div style="background-color: red"></div>
@@ -31,7 +30,7 @@
           <div class="product_info1_brand">(주)농영식품</div>
           <div class="product_info1_name">강낭콩</div>
           <div class="product_info1_price">4,322원</div>
-  
+
           <div class="product_info1_review">
             <div class="product_info1_star">
               <span class="material-symbols-outlined"> star </span
@@ -40,23 +39,27 @@
             </div>
             <div class="product_info1_review_count">232 개의 리뷰</div>
           </div>
-  
+
           <div class="product_info1_del">
             <span class="material-symbols-outlined"> local_shipping </span>
             <div class="product_info1_date">3~4일 소요</div>
           </div>
-  
+
           <div class="product_info1_point">
-              <span class="material-symbols-outlined">
-                  monetization_on
-                  </span>
-              <div>1%적립 혜택</div>
-              <div>|</div>
-              <div class="product_info1_point_count">최대 1,323원 적립</div>
+            <span class="material-symbols-outlined"> monetization_on </span>
+            <div>1%적립 혜택</div>
+            <div>|</div>
+            <div class="product_info1_point_count">최대 1,323원 적립</div>
           </div>
-  
+
           <div class="product_info1_form1">
-            <input class="product_info1_form_num" type="number" min="1" value="1" name="product_info1_form_number">
+            <input
+              class="product_info1_form_num"
+              type="number"
+              min="1"
+              value="1"
+              name="product_info1_form_number"
+            />
             <select class="product_info1_form_select">
               <option value="">--옵션을 선택하세요--</option>
               <option value="dog">Dog</option>
@@ -65,24 +68,348 @@
               <option value="parrot">Parrot</option>
               <option value="spider">Spider</option>
               <option value="goldfish">Goldfish</option>
-          </select>
+            </select>
           </div>
-  
+
           <div class="product_info1_form1">
             <div class="button product_info1_form_button1">장바구니 담기</div>
             <div class="button product_info1_form_button2">바로구매</div>
           </div>
-  
         </div>
       </div>
 
       <div class="product_info_nav">
-        <div>제품상세</div>
-        <div>상품평</div>
-        <div>상품문의</div>
-        <div>배송/교환/반품 안내</div>
+        <div
+          class="button"
+          data-json='{"event_type": "product_info_nav_button", "event_data": "product_detail", "url": "none", "type": "none", "data": "none"}'
+        >
+          제품상세
+        </div>
+        <div
+          class="button"
+          data-json='{"event_type": "product_info_nav_button", "event_data": "product_review", "url": "none", "type": "none", "data": "none"}'
+        >
+          상품평
+        </div>
+        <div
+          class="button"
+          data-json='{"event_type": "product_info_nav_button", "event_data": "inquiry", "url": "none", "type": "none", "data": "none"}'
+        >
+          상품문의
+        </div>
+        <div
+          class="button"
+          data-json='{"event_type": "product_info_nav_button", "event_data": "other", "url": "none", "type": "none", "data": "none"}'
+        >
+          배송/교환/반품 안내
+        </div>
       </div>
 
+      <div class="product_info_box">
+        <div class="product_detail">
+          <div class="prduct_detail_top">필수 표기정보</div>
+          <div class="prduct_detail_table">
+            <div>
+              <div>품명 및 모델명</div>
+              <div class="product_detail_name">강낭콩</div>
+            </div>
+            <div>
+              <div>인증/허가 사항</div>
+              <div class="product_detail_certification">해당사항없음</div>
+            </div>
+            <div>
+              <div>제조국(원산지)</div>
+              <div class="product_detail_make">중국</div>
+            </div>
+            <div>
+              <div>제조자(수입자)</div>
+              <div class="product_detail_certification">
+                농영식품 (업체미제공으로 정확한 제조,수입자 알 수 없음)
+              </div>
+            </div>
+            <div>
+              <div>소비자상담 관련 전화번호</div>
+              <div class="product_detail_manufacturer">
+                개인판매번호 1544-9388
+              </div>
+            </div>
+          </div>
+          <div class="product_detail_explanation">
+            <div class="exp_text_auto_l">
+              exp_text_auto_l, 큰크기 텍스트, 가온데정렬, 크기자동
+            </div>
+            <div class="exp_text_auto_m">
+              exp_text_auto_m, 중간크기 텍스트, 가온데정렬, 크기자동
+            </div>
+            <div class="exp_text_auto_s">
+              exp_text_auto_s, 작은크기 텍스트, 가온데정렬, 크기자동
+            </div>
+            <div class="exp_text_static_l">
+              exp_text_static_l, 큰크기 텍스트, 가온데정렬, 크기고정
+            </div>
+            <div class="exp_text_static_m">
+              exp_text_static_m, 중간크기 텍스트, 가온데정렬, 크기고정
+            </div>
+            <div class="exp_text_static_s">
+              exp_text_static_s, 작은크기 텍스트, 가온데정렬, 크기고정
+            </div>
+            <div class="exp_text_static_ss">
+              exp_text_static_ss, 매우작은크기 텍스트, 가온데정렬, 크기고정
+            </div>
+            <div class="exp_text_box1">
+              exp_text_box1, 설명 텍스트, 정렬없음, 크기고정
+            </div>
+            <div class="exp_text_box2">
+              exp_text_box1, 설명 텍스트, 가온데 정렬, 크기고정
+            </div>
+            <div class="exp_padding_l">exp_padding_l, 큰공백</div>
+            <div class="exp_padding_m">exp_padding_m, 중간공백</div>
+            <div class="exp_padding_s">exp_padding_s, 작은공백</div>
+
+            <div class="exp_img_auto_l">
+              <div>exp_img_auto_l</div>
+              <div>exp_img_auto_l</div>
+              <div>exp_img_auto_l</div>
+              <div>exp_img_auto_l</div>
+            </div>
+            <div class="exp_img_auto_m">
+              <div>exp_img_auto_m</div>
+              <div>exp_img_auto_m</div>
+              <div>exp_img_auto_m</div>
+              <div>exp_img_auto_m</div>
+            </div>
+            <div class="exp_img_auto_s">
+              <div>exp_img_auto_s</div>
+              <div>exp_img_auto_s</div>
+              <div>exp_img_auto_s</div>
+              <div>exp_img_auto_s</div>
+            </div>
+            <div class="exp_img_static_one_rectangle_l">
+              exp_img_static_one_rectangle_l
+            </div>
+            <div class="exp_img_static_one_rectangle_m">
+              exp_img_static_one_rectangle_m
+            </div>
+            <div class="exp_img_static_one_rectangle_s">
+              exp_img_static_one_rectangle_s
+            </div>
+          </div>
+        </div>
+
+        <div class="product_review">
+          <div class="product_review_flex">
+            <div>정렬</div>
+            <select>
+              <option>작성일 오름차순</option>
+              <option>작성일 내림차순</option>
+              <option>별점 오름차순</option>
+              <option>별점 내림차순</option>
+            </select>
+          </div>
+          <div class="product_review_box">
+
+            <div class="product_review_box_one">
+              <div class="prduct_review_profile"></div>
+              <div class="prduct_review_id">user1</div>
+              <div class="prduct_review_star">
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+              </div>
+              <div class="prduct_review_date">2021-03-12</div>
+              <div class="product_review_box_grow"></div>
+              <span class="material-symbols-outlined button"
+              data-json='{"event_type": "product_review_box_grow_toggle", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+              > arrow_drop_down </span>
+              <div class="product_review_box_one_detial">
+                <div class="product_review_box_one_detial_title">너무 조아용</div>
+                <div class="product_review_box_one_detial_option">강낭콩, xl, 검정</div>
+                <div class="product_review_box_one_detial_content">
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                </div>
+              </div>
+            </div>
+
+            <div class="product_review_box_one">
+              <div class="prduct_review_profile"></div>
+              <div class="prduct_review_id">user1</div>
+              <div class="prduct_review_star">
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+              </div>
+              <div class="prduct_review_date">2021-03-12</div>
+              <div class="product_review_box_grow"></div>
+              <span class="material-symbols-outlined button"
+              data-json='{"event_type": "product_review_box_grow_toggle", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+              > arrow_drop_down </span>
+              <div class="product_review_box_one_detial">
+                <div class="product_review_box_one_detial_title">너무 조아용</div>
+                <div class="product_review_box_one_detial_option">강낭콩, xl, 검정</div>
+                <div class="product_review_box_one_detial_content">
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                </div>
+              </div>
+            </div>
+
+            <div class="product_review_box_one">
+              <div class="prduct_review_profile"></div>
+              <div class="prduct_review_id">user1</div>
+              <div class="prduct_review_star">
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+              </div>
+              <div class="prduct_review_date">2021-03-12</div>
+              <div class="product_review_box_grow"></div>
+              <span class="material-symbols-outlined button"
+              data-json='{"event_type": "product_review_box_grow_toggle", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+              > arrow_drop_down </span>
+              <div class="product_review_box_one_detial">
+                <div class="product_review_box_one_detial_title">너무 조아용</div>
+                <div class="product_review_box_one_detial_option">강낭콩, xl, 검정</div>
+                <div class="product_review_box_one_detial_content">
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                </div>
+              </div>
+            </div>
+
+            <div class="product_review_box_one">
+              <div class="prduct_review_profile"></div>
+              <div class="prduct_review_id">user1</div>
+              <div class="prduct_review_star">
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+              </div>
+              <div class="prduct_review_date">2021-03-12</div>
+              <div class="product_review_box_grow"></div>
+              <span class="material-symbols-outlined button"
+              data-json='{"event_type": "product_review_box_grow_toggle", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+              > arrow_drop_down </span>
+              <div class="product_review_box_one_detial">
+                <div class="product_review_box_one_detial_title">너무 조아용</div>
+                <div class="product_review_box_one_detial_option">강낭콩, xl, 검정</div>
+                <div class="product_review_box_one_detial_content">
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                </div>
+              </div>
+            </div>
+
+            <div class="product_review_box_one">
+              <div class="prduct_review_profile"></div>
+              <div class="prduct_review_id">user1</div>
+              <div class="prduct_review_star">
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+              </div>
+              <div class="prduct_review_date">2021-03-12</div>
+              <div class="product_review_box_grow"></div>
+              <span class="material-symbols-outlined button"
+              data-json='{"event_type": "product_review_box_grow_toggle", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+              > arrow_drop_down </span>
+              <div class="product_review_box_one_detial">
+                <div class="product_review_box_one_detial_title">너무 조아용</div>
+                <div class="product_review_box_one_detial_option">강낭콩, xl, 검정</div>
+                <div class="product_review_box_one_detial_content">
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                </div>
+              </div>
+            </div>
+
+            <div class="product_review_box_one">
+              <div class="prduct_review_profile"></div>
+              <div class="prduct_review_id">user1</div>
+              <div class="prduct_review_star">
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+              </div>
+              <div class="prduct_review_date">2021-03-12</div>
+              <div class="product_review_box_grow"></div>
+              <span class="material-symbols-outlined button"
+              data-json='{"event_type": "product_review_box_grow_toggle", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+              > arrow_drop_down </span>
+              <div class="product_review_box_one_detial">
+                <div class="product_review_box_one_detial_title">너무 조아용</div>
+                <div class="product_review_box_one_detial_option">강낭콩, xl, 검정</div>
+                <div class="product_review_box_one_detial_content">
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                </div>
+              </div>
+            </div>
+
+            <div class="product_review_box_one">
+              <div class="prduct_review_profile"></div>
+              <div class="prduct_review_id">user1</div>
+              <div class="prduct_review_star">
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+                <span class="material-symbols-outlined"> star </span>
+              </div>
+              <div class="prduct_review_date">2021-03-12</div>
+              <div class="product_review_box_grow"></div>
+              <span class="material-symbols-outlined button"
+              data-json='{"event_type": "product_review_box_grow_toggle", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+              > arrow_drop_down </span>
+              <div class="product_review_box_one_detial">
+                <div class="product_review_box_one_detial_title">너무 조아용</div>
+                <div class="product_review_box_one_detial_option">강낭콩, xl, 검정</div>
+                <div class="product_review_box_one_detial_content">
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                  텍스트 테스트 텍스트 테스트중....
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="inquiry">3</div>
+        <div class="other">4</div>
+      </div>
     </div>
 
     <div class="nav1">
@@ -138,6 +465,8 @@
         </div>
       </div>
     </div>
+    <!-- _________________________________________________________________ -->
+
     <div id="product">
       <form id="search_form">
         <input type="text" name="search" placeholder="제품검색" />
