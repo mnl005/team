@@ -31,6 +31,11 @@
 .button{
   cursor: pointer;
 }
+@media (max-width: 500px) {
+  .button{
+    font-size:14px;
+  }
+}
 .nav1{
   position: fixed;
   width:100%;
@@ -107,39 +112,51 @@
   border-radius: 3px;
 }
 /* _________________________________________________________________ */
+#product_info{
+  display: none;
+}
+/* _________________________________________________________________ */
 .banner{
   background-image: url("/static/img/black-1072366.jpg");
   background-position: center;
   background-size: cover;
-  position: relative;
   width:100%;
   height:500px;
+  display: flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  justify-content: center;
 }
 .banner_text1{
-  position: absolute;
-  top:30%;
-  left:10%;
+
   color:white;
-  font-size:50px;
+  font-size:10vw;
 }
 .banner_text2{
-  position: absolute;
-  top:45%;
-  left:10%;
   color:white;
   font-size:40px;
+  font-size:5vw;
 }
 .banner_btn{
-  position: absolute;
-  top:65%;
-  left:15%;
+  margin-top:30px;
+  width:120px;
   color:white;
   background-color: #1b2333;
   padding:10px;
   font-size:16px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-flow:row nowrap;
   cursor: pointer;
+}
+@media (min-width: 700px) {
+  .banner_text1{
+    font-size:4vw;
+  }
+  .banner_text2{
+    font-size:3vw;
+  }
 }
 /* _______________________________________ */
 #product{
@@ -227,8 +244,8 @@
   max-width:700px;
 }
 .product_img{
-  width:100px;
-  height:100px;
+  width:80px;
+  height:80px;
   border:1px solid black;
 }
 .product_name{
@@ -373,6 +390,23 @@
 color:white;
   font-weight: 800;
   background-color: #212A3E;
+}
+.product_info1_form_other_title{
+  background-color: #4c5a77;
+  color:white;
+  padding:3px;
+}
+.product_info1_form_other_content{
+  border:1px solid #212A3E;
+  display: flex;
+  flex-flow:row nowrap;
+}
+.product_info1_form_other_content>div{
+  background-position: center;
+  background-size: cover;
+  width:90%;
+  background-color: #4c5a77;
+  margin:3px;
 }
 .product_info_nav{
   display: flex;
@@ -676,4 +710,28 @@ color:white;
 .inquiry_one_user_info_flex>div:nth-child(3){
   font-weight: 100;
   font-size:13px;
+}
+.other_box_one>div{
+  border-top:1px solid #212A3E;
+}
+.other_box_one{
+  border-bottom:1px solid #212A3E;
+  display: flex;
+  flex-flow:row nowrap;
+  max-width: 500px;
+  margin:auto;
+}
+.other_box_one>div:nth-child(1){
+  padding:10px;
+  font-size:14px;
+  font-weight: 800;
+  background-color:rgba(180,180,180,0.3);
+  width:30%;
+  text-align: center;
+}
+.other_box_one>div:nth-child(2){
+  width:70%;
+  padding:10px;
+  font-size:14px;
+  font-weight: 100;
 }

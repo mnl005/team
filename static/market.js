@@ -97,7 +97,7 @@ function send(req) {
 }
 //nav
 function nav_view() {
-  console.log("screan" + $(window).width());
+
   if ($(window).width() < 760) {
     $(".nav2").css("display", "flex");
     $(".nav2_top").css("display", "flex");
@@ -110,6 +110,8 @@ function nav_view() {
 }
 //상품디테일 이미지 크기조절
 function product_img(){
+  $(".product_left").height($(".product_left").width());
+  $(".product_right").height($(".product_left").width());
   $(".exp_img_auto_l>div").each(function() {
     $(this).height($(this).width());
   });
@@ -128,13 +130,27 @@ function product_img(){
   $(".exp_img_static_one_rectangle_s").each(function() {
     $(this).height($(this).width()*0.65);
   });
+  $(".product_info1_form_other_content>div").each(function() {
+    $(this).height($(this).width());
+  });
+  console.log($(".product_right").width());
+  if($(".product_right").width() < 470){
+    $(".product_info1_form_other_content").hide();
+    $(".product_info1_form_other_title").hide();
+  }
+  else{
+    $(".product_info1_form_other_content").show();
+    $(".product_info1_form_other_title").show();
+    $(".product_info1_form_other_content>div").each(function() {
+      $(this).height($(this).width());
+    });
+  }
 }
 
 $(document).ready(function () {
   nav_view();
   //레이아웃 크기조절
-  $(".product_left").height($(".product_left").width());
-  $(".product_right").height($(".product_left").width());
+
 
   //상품디테일 이미지 크기조절
   product_img();
@@ -153,6 +169,7 @@ $(document).ready(function () {
   }, 3000); // 1초마다 실행
 
   $(window).resize(function () {
+    console.log("screan" + $(window).width());
     $(".product_left").height($(".product_left").width());
     $(".product_right").height($(".product_left").width());
         //상품디테일 이미지 크기조절
@@ -179,6 +196,10 @@ $(document).ready(function () {
     switch (json.event_type) {
       case "pop":
         $(this).closest(".pop").slideToggle(500);
+        break;
+      case "open":
+        $("#" + json.event_data).slideToggle(500);
+          product_img();
         break;
       case "product_type_selecter":
         $("#product_type_selecter_in").stop().slideToggle();
