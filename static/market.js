@@ -95,14 +95,39 @@ function send(req) {
     });
   });
 }
-
+//nav
+function nav_view(){
+  console.log("screan" + $(window).width());
+  if($(window).width() < 760){
+    $(".nav2").css("display","flex");
+    $(".nav2_top").css("display","flex");
+    $(".nav1").css("display","none");
+  }
+  else{
+    $(".nav2").css("display","none");
+    $(".nav2_top").css("display","none");
+    $(".nav1").css("display","flex");
+  }
+}
 $(document).ready(function () {
 
-
+  nav_view();
   //레이아웃 크기조절
-  $(".banner").height($(".banner").width() * 0.6);
+  $(".product_left").height($(".product_left").width());
+  $(".product_right").height($(".product_left").width());
+
+  //베너순환
+  let currentItem = $('.product_left>div:first').show();
+  setInterval(function() {
+    currentItem.hide(); 
+    currentItem = currentItem.next().length ? currentItem.next() : $('.product_left>div:first');
+    currentItem.show(); 
+  }, 3000); // 1초마다 실행
+  
   $(window).resize(function () {
-    $(".banner").height($(".banner").width() * 0.6);
+    $(".product_left").height($(".product_left").width());
+    $(".product_right").height($(".product_left").width());
+    nav_view();
   });
 
   //클릭이벤트
@@ -122,13 +147,43 @@ $(document).ready(function () {
     console.log("event_type : " + json.event_type);
     console.log("event_data : " + json.event_data);
     switch (json.event_type) {
-
+      case "pop":
+      $(this).closest(".pop").slideToggle(500);
+      break;
+      case "product_type_selecter":
+      $("#product_type_selecter_in").stop().slideToggle();
+      break;
+      case "product_sort_selecter":
+        $("#product_sort_selecter_in").stop().slideToggle();
+        break;
+      case "product_sort":
+      if(json.event_data === "column"){ 
+        $("#product_con").css("flex-flow","column");
+        $(".product_box").css("flex-flow","row nowrap");
+        $(".product_box").css("width","100%");
+        $(".product_box").css("max-width","700px");
+      }else if(json.event_data === "row1"){
+        $("#product_con").css("flex-flow","row wrap");
+        $(".product_box").css("flex-flow","column");
+        $(".product_box").css("width","fit-content");
+        $(".product_box").css("max-width","fit-content");
+        $(".product_box").css("min-width","300px");
+      }else{
+        $("#product_con").css("flex-flow","row wrap");
+        $(".product_box").css("flex-flow","column");
+        $(".product_box").css("width","fit-content");
+        $(".product_box").css("max-width","fit-content");
+        $(".product_box").css("min-width","0px");
+      }
+      
+      break;
       default:
         console.log("이벤트타입 없음");
         break;
     }
   });
 
+  //호버이벤트
   $(document).on("mouseenter mouseleave", ".hover", function (event) {
     let json = $(this).data("json");
     console.log(json.event_type);
@@ -139,6 +194,33 @@ $(document).ready(function () {
         break;
     }
   });
+
+  //스크롤이벤트
+  let lastScrollTop = 0; 
+  
+$(document).scroll(function() { 
+  let currentScrollTop = $(this).scrollTop(); 
+
+    if (currentScrollTop > lastScrollTop) {
+        // 스크롤이 내려갈 때
+        $('.nav1').fadeOut(); 
+        $('.nav2').fadeOut(); 
+        $('.nav2_top').fadeOut(); 
+    } else {
+        // 스크롤이 올라갈 때
+        if($(window).width() < 760){
+          $('.nav2').fadeIn(); 
+          $('.nav2_top').fadeIn(); 
+        }else{
+          $('.nav1').fadeIn(); 
+        }
+        
+
+    }
+
+
+    lastScrollTop = currentScrollTop; 
+});
 
 });
 

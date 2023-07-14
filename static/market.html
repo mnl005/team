@@ -1,23 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-/>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+  <link rel="stylesheet" href="market.css" />
+  <body>
 
-<link rel="stylesheet" href="market.css" />
-<body>
-    <div id="spinner"></div>
-    
-
+    <div class="pop" id="product_info">
+      <span
+        class="material-symbols-outlined button close"
+        data-json='{"event_type": "pop", "event_data": "close", "url": "none", "type": "none", "data": "none"}'
+      >
+        close
+      </span>
   
+      <div class="product_info1">
+        <div class="product_left">
+          <div style="background-color: red"></div>
+          <div style="background-color: green"></div>
+          <div style="background-color: blue"></div>
+        </div>
+        <div class="product_right">
+          <div class="product_info1_brand">(주)농영식품</div>
+          <div class="product_info1_name">강낭콩</div>
+          <div class="product_info1_price">4,322원</div>
+  
+          <div class="product_info1_review">
+            <div class="product_info1_star">
+              <span class="material-symbols-outlined"> star </span
+              ><span class="material-symbols-outlined"> star </span
+              ><span class="material-symbols-outlined"> star </span>
+            </div>
+            <div class="product_info1_review_count">232 개의 리뷰</div>
+          </div>
+  
+          <div class="product_info1_del">
+            <span class="material-symbols-outlined"> local_shipping </span>
+            <div class="product_info1_date">3~4일 소요</div>
+          </div>
+  
+          <div class="product_info1_point">
+              <span class="material-symbols-outlined">
+                  monetization_on
+                  </span>
+              <div>1%적립 혜택</div>
+              <div>|</div>
+              <div class="product_info1_point_count">최대 1,323원 적립</div>
+          </div>
+  
+          <div class="product_info1_form1">
+            <input class="product_info1_form_num" type="number" min="1" value="1" name="product_info1_form_number">
+            <select class="product_info1_form_select">
+              <option value="">--옵션을 선택하세요--</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="hamster">Hamster</option>
+              <option value="parrot">Parrot</option>
+              <option value="spider">Spider</option>
+              <option value="goldfish">Goldfish</option>
+          </select>
+          </div>
+  
+          <div class="product_info1_form1">
+            <div class="button product_info1_form_button1">장바구니 담기</div>
+            <div class="button product_info1_form_button2">바로구매</div>
+          </div>
+  
+        </div>
+      </div>
+
+      <div class="product_info_nav">
+        <div>제품상세</div>
+        <div>상품평</div>
+        <div>상품문의</div>
+        <div>배송/교환/반품 안내</div>
+      </div>
+
+    </div>
+
+    <div class="nav1">
+      <div class="nav1_title">market</div>
+      <div class="nav1_flex1"></div>
+      <div class="nav1_button button">Home</div>
+      <div class="nav1_flex2"></div>
+      <div class="nav1_button button">Registration</div>
+      <div class="nav1_flex2"></div>
+      <div class="nav1_button button">Blog</div>
+      <div class="nav1_flex2"></div>
+      <div class="nav1_button button">QnA</div>
+      <div class="nav1_flex2"></div>
+      <div class="nav1_button button" id="nav1_login_button">Login</div>
+      <div class="nav1_button button" id="nav1_logout_button">logout</div>
+      <div class="nav1_flex2"></div>
+      <span class="material-symbols-outlined button"> shopping_cart </span>
+      <div class="nav1_flex2"></div>
+      <span class="material-symbols-outlined"> account_circle </span>
+      <div class="nav1_flex2"></div>
+    </div>
+
+    <div class="nav2">
+      <span class="material-symbols-outlined nav2_button button"> home </span>
+      <span class="material-symbols-outlined nav2_button button">
+        add_circle
+      </span>
+      <span class="material-symbols-outlined nav2_button button"> edit </span>
+      <span class="material-symbols-outlined"> support_agent </span>
+    </div>
+
+    <div class="nav2_top">
+      <div class="nav2_title">market</div>
+      <div class="nav2_flex1"></div>
+      <div class="nav2_button button" id="nav2_login_button">Login</div>
+      <div class="nav2_flex2"></div>
+      <div class="nav2_button button" id="nav2_login_button">logout</div>
+      <div class="nav2_flex2"></div>
+      <span class="material-symbols-outlined button"> shopping_cart </span>
+      <div class="nav2_flex2"></div>
+      <span class="material-symbols-outlined"> account_circle </span>
+      <div class="nav2_flex2"></div>
+    </div>
+
+    <!-- _________________________________________________________________ -->
+    <div id="home">
+      <div class="banner">
+        <div class="banner_text1">판매를 보다 쉽게.</div>
+        <div class="banner_text2">자동화된 수익창출 시스템을 경험하세요</div>
+        <div class="banner_btn">
+          <div>try now</div>
+          <span class="material-symbols-outlined"> chevron_right </span>
+        </div>
+      </div>
+    </div>
+    <div id="product">
+      <form id="search_form">
+        <input type="text" name="search" placeholder="제품검색" />
+        <button type="submit">검색</button>
+      </form>
+      <div id="sort">
+        <div
+          class="button"
+          id="product_type_selecter"
+          data-json='{"event_type": "product_sort_selecter", "event_data": "product_new", "url": "none", "type": "none", "data": "none"}'
+        >
+          <div>상품정렬</div>
+          <span class="material-symbols-outlined"> arrow_drop_down </span>
+          <div id="product_sort_selecter_in">
+            <div>가격 오름차순</div>
+            <div>가격 내림차순</div>
+            <div>날짜 오름차순</div>
+            <div>날짜 내림차순</div>
+          </div>
+        </div>
+        <div
+          class="button"
+          id="product_type_selecter"
+          data-json='{"event_type": "product_type_selecter", "event_data": "product_new", "url": "none", "type": "none", "data": "none"}'
+        >
+          <div>상품타입</div>
+          <span class="material-symbols-outlined"> arrow_drop_down </span>
+          <div id="product_type_selecter_in">
+            <div>전체상품</div>
+            <div>식품</div>
+            <div>의류</div>
+            <div>가구</div>
+            <div>가전</div>
+            <div>뷰티</div>
+            <div>반려동물용품</div>
+            <div>일반의약품</div>
+            <div>주방용품</div>
+            <div>도서/음반</div>
+            <div>문구/오피스</div>
+          </div>
+        </div>
+        <span
+          class="material-symbols-outlined button"
+          data-json='{"event_type": "product_sort", "event_data": "column", "url": "none", "type": "none", "data": "none"}'
+        >
+          sort
+        </span>
+        <span
+          class="material-symbols-outlined button"
+          data-json='{"event_type": "product_sort", "event_data": "row1", "url": "none", "type": "none", "data": "none"}'
+        >
+          drag_indicator
+        </span>
+        <span
+          class="material-symbols-outlined button"
+          data-json='{"event_type": "product_sort", "event_data": "row2", "url": "none", "type": "none", "data": "none"}'
+        >
+          apps
+        </span>
+      </div>
+
+      <div id="product_con">
+        <div class="product_box">
+          <div class="product_img"></div>
+          <div class="product_name">강낭콩</div>
+          <div class="product_price">4,500원</div>
+          <div class="product_date">2021-03-21</div>
+          <div class="product_btn_flex">
+            <div>장바구니</div>
+            <div>자세히보기</div>
+          </div>
+        </div>
+        <div class="product_box">
+          <div class="product_img"></div>
+          <div class="product_name">강낭콩</div>
+          <div class="product_price">4,500원</div>
+          <div class="product_date">2021-03-21</div>
+          <div class="product_btn_flex">
+            <div>장바구니</div>
+            <div>자세히보기</div>
+          </div>
+        </div>
+        <div class="product_box">
+          <div class="product_img"></div>
+          <div class="product_name">강낭콩</div>
+          <div class="product_price">4,500원</div>
+          <div class="product_date">2021-03-21</div>
+          <div class="product_btn_flex">
+            <div>장바구니</div>
+            <div>자세히보기</div>
+          </div>
+        </div>
+        <div class="product_box">
+          <div class="product_img"></div>
+          <div class="product_name">강낭콩</div>
+          <div class="product_price">4,500원</div>
+          <div class="product_date">2021-03-21</div>
+          <div class="product_btn_flex">
+            <div>장바구니</div>
+            <div>자세히보기</div>
+          </div>
+        </div>
+        <div class="product_box">
+          <div class="product_img"></div>
+          <div class="product_name">강낭콩</div>
+          <div class="product_price">4,500원</div>
+          <div class="product_date">2021-03-21</div>
+          <div class="product_btn_flex">
+            <div>장바구니</div>
+            <div>자세히보기</div>
+          </div>
+        </div>
+        <div class="product_box">
+          <div class="product_img"></div>
+          <div class="product_name">강낭콩</div>
+          <div class="product_price">4,500원</div>
+          <div class="product_date">2021-03-21</div>
+          <div class="product_btn_flex">
+            <div>장바구니</div>
+            <div>자세히보기</div>
+          </div>
+        </div>
+        <div class="product_box">
+          <div class="product_img"></div>
+          <div class="product_name">강낭콩</div>
+          <div class="product_price">4,500원</div>
+          <div class="product_date">2021-03-21</div>
+          <div class="product_btn_flex">
+            <div>장바구니</div>
+            <div>자세히보기</div>
+          </div>
+        </div>
+        <div class="product_box">
+          <div class="product_img"></div>
+          <div class="product_name">강낭콩</div>
+          <div class="product_price">4,500원</div>
+          <div class="product_date">2021-03-21</div>
+          <div class="product_btn_flex">
+            <div>장바구니</div>
+            <div>자세히보기</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="market.js"></script>
-</body>
+  </body>
 </html>
