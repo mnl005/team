@@ -583,6 +583,7 @@ color:white;
   border-radius: 50%;
   background-position: center;
   background-size: cover;
+  background-color: gray;
 }
 .prduct_review_id{
   font-weight: 800;
@@ -599,12 +600,13 @@ color:white;
 }
 
 .product_review_box_one_detial{
+  z-index:1;
   position: absolute;
   top:100%;
   left:0%;
   width:100%;
-  background-color: white;
   padding:10px;
+  background-color: white;
   display: none;
 }
 .product_review_box_one_detial_title{
@@ -618,5 +620,60 @@ color:white;
   margin-bottom:10px;
 }
 .product_review_box_one_detial_content{
+  font-size:13px;
+}
+.inquiry_title{
+  text-align: center;
+  font-size:40px;
+  font-weight: 800;
+}
+.inquiry_one{
+  margin-top:20px;
+  background-color:rgba(180,180,180,0.1);
+}
+.inquiry_one>div>div, .inquiry_one>div{
+  padding:3px;
+}
+.inquiry_one_q{
+  display: flex;
+  flex-flow:row nowrap;
+}
+.inquiry_one_q>div:nth-child(1){
+  color:red;
+  font-weight: 800;
+  margin-right:10px;
+}
+.inquiry_one_q>div:nth-child(2){
+  font-weight: 100;
+  font-size:14px;
+}
+.inquiry_one_a{
+  display: flex;
+  flex-flow:row nowrap;
+}
+.inquiry_one_a>div:nth-child(1){
+  color:blue;
+  font-weight: 800;
+  margin-right:10px;
+}
+.inquiry_one_a>div:nth-child(2){
+  font-weight: 100;
+  font-size:14px;
+}
+.inquiry_one_user_info_flex{
+  display: flex;
+  flex-flow:row nowrap;
+}
+.inquiry_one_user_info_flex>div:nth-child(1){
+  font-weight: 800;
+  margin-right:10px;
+}
+.inquiry_one_user_info_flex>div:nth-child(2){
+  font-weight: 100;
+  font-size:13px;
+  margin-right:20px;
+}
+.inquiry_one_user_info_flex>div:nth-child(3){
+  font-weight: 100;
   font-size:13px;
 }
