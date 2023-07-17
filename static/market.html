@@ -803,7 +803,6 @@
 
     <div class="nav_com" id="registration">
       <div id="registration_in">
-
         <div class="product_info1">
           <div class="product_left1">
             <div style="background-color: red"></div>
@@ -811,9 +810,9 @@
             <div style="background-color: blue"></div>
           </div>
           <div class="product_right">
-            <div class="product_info1_brand">(주)농영식품</div>
-            <div class="product_info1_name">강낭콩</div>
-            <div class="product_info1_price">4,322원</div>
+            <div class="product_info1_brand"><input type="text" name="product_brand" class="input" placeholder="브랜드"></div>
+            <div class="product_info1_name"><input type="text" name="product_name" class="input" placeholder="상품이름"></div>
+            <div class="product_info1_price"><input type="text" name="product_price" class="input" placeholder="상품가격"></div>
             <div class="product_info1_review">
               <div class="product_info1_star">
                 <span class="material-symbols-outlined"> star </span
@@ -825,9 +824,8 @@
   
             <div class="product_info1_del">
               <span class="material-symbols-outlined"> local_shipping </span>
-              <div class="product_info1_date">3~4일 소요</div>
+              <div class="product_info1_date"><input type="text" name="product_del" class="input" placeholder="배송일정보"></div>
             </div>
-  
             <div class="product_info1_point">
               <span class="material-symbols-outlined"> monetization_on </span>
               <div>1%적립 혜택</div>
@@ -836,22 +834,8 @@
             </div>
   
             <div class="product_info1_form1">
-              <input
-                class="product_info1_form_num"
-                type="number"
-                min="1"
-                value="1"
-                name="product_info1_form_number"
-              />
-              <select class="product_info1_form_select">
-                <option value="">--옵션을 선택하세요--</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider">Spider</option>
-                <option value="goldfish">Goldfish</option>
-              </select>
+              <input type="text" name="product_count" class="input" placeholder="옵션별제고량 쉼표로 구분">
+              <input type="text" name="product_option" class="input" placeholder="옵션을 쉽표로 구분">
             </div>
   
             <div class="product_info1_form1">
@@ -873,7 +857,6 @@
               <div></div>
               <div></div>
             </div>
-  
   
           </div>
 
@@ -913,29 +896,66 @@
             <div class="prduct_detail_table">
               <div>
                 <div>품명 및 모델명</div>
-                <div class="product_detail_name">강낭콩</div>
+                <div class="product_detail_name">
+                  <input type="text" name="product_name" class="input" placeholder="품명및모델명">
+                </div>
               </div>
               <div>
                 <div>인증/허가 사항</div>
-                <div class="product_detail_certification">해당사항없음</div>
+                <div class="product_detail_certification">
+                  <input type="text" name="product_permission" class="input" placeholder="인증및허가">
+                </div>
               </div>
               <div>
                 <div>제조국(원산지)</div>
-                <div class="product_detail_make">중국</div>
+                <div class="product_detail_make">
+                  <input type="text" name="product_c_manufacture" class="input" placeholder="제조국(원산지)">
+                </div>
               </div>
               <div>
                 <div>제조자(수입자)</div>
                 <div class="product_detail_certification">
-                  농영식품 (업체미제공으로 정확한 제조,수입자 알 수 없음)
+                  <input type="text" name="product_manufacture" class="input" placeholder="제조자(수입자)">
                 </div>
               </div>
               <div>
                 <div>소비자상담 관련 전화번호</div>
                 <div class="product_detail_manufacturer">
-                  개인판매번호 1544-9388
+                  <input type="text" name="product_number" class="input" placeholder="소비자 상담번호">
                 </div>
               </div>
             </div>
+
+            <div id="product_make_form">
+              <span class="material-symbols-outlined button" id="product_make_form_change">
+                change_circle
+                </span>
+
+              <div id="product_make_form_type1">
+                <div class="product_make_form_title">공백 및 텍트스 삽입</div>
+  
+                <select name="product_make_form_select1">
+                  <option vlaue="exp_text_auto_l">큰크기 텍스트, 가온데정렬, 크기자동</option>
+                  <option vlaue="exp_text_auto_m">중간크기 텍스트, 가온데정렬, 크기자동</option>
+                  <option vlaue="exp_text_auto_s">작은크기 텍스트, 가온데정렬, 크기자동</option>
+                  <option vlaue="exp_text_static_l">큰크기 텍스트, 가온데정렬, 크기고정</option>
+                  <option vlaue="exp_text_static_m">중간크기 텍스트, 가온데정렬, 크기고정</option>
+                  <option vlaue="exp_text_static_s">작은크기 텍스트, 가온데정렬, 크기고정</option>
+                  <option vlaue="exp_text_static_ss">매우작은크기 텍스트, 가온데정렬, 크기고정</option>
+                  <option vlaue="exp_text_box1">설명 텍스트, 정렬없음, 크기고정</option>
+                  <option vlaue="exp_text_box2">설명 텍스트, 가온데 정렬, 크기고정</option>
+                  <option vlaue="exp_padding_l">큰공백</option>
+                  <option vlaue="exp_padding_m">중간공백</option>
+                  <option vlaue="exp_padding_s">작은공백</option>
+                </select>
+                <input type="text" name="add_text" placeholder="텍스트를 입력하세요">
+                <div class="product_make_form_button button">상세정보 삽입</div>
+                <div class="product_make_form_button button">제품등록</div>
+              </div>
+      
+             
+            </div>
+
             <div class="product_detail_explanation">
               <div class="exp_text_auto_l">
                 exp_text_auto_l, 큰크기 텍스트, 가온데정렬, 크기자동
@@ -1346,21 +1366,22 @@
   
               <div class="other_box_one">
                 <div>배송정보</div>
-                <div>배송특이사항 없음</div>
+                <div><input type="text" name="product_del_info1" class="input" placeholder="배송정보"></div>
               </div>
   
               <div class="other_box_one">
-                <div>배송정보</div>
-                <div>배송특이사항 없음</div>
+                <div>배송 특이사항</div>
+                <div><input type="text" name="product_del_info2" class="input" placeholder="특이사항"></div>
               </div>
   
               <div class="other_box_one">
-                <div>배송정보</div>
-                <div>배송특이사항 없음</div>
+                <div>배송 제외지역</div>
+                <div><input type="text" name="product_del_info3" class="input" placeholder="제외지역"></div>
               </div>
   
             </div>
           </div>
+
         </div>
       </div>
     </div>
