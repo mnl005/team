@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  /* border:1px solid red; */
+  border:1px solid red;
 }
 *::-webkit-scrollbar {
   display: none;
@@ -31,10 +31,16 @@
 .button{
   cursor: pointer;
 }
+.bottom{
+  height:4000px;
+}
 @media (max-width: 500px) {
   .button{
     font-size:14px;
   }
+}
+#registration,#home,#blog,#qna{
+  display: none;
 }
 .nav1{
   position: fixed;
@@ -162,6 +168,7 @@
 #product{
   width:100%;
   padding:10px;
+  margin-top:80px;
 }
 #search_form{
   display: flex;
@@ -296,15 +303,26 @@
   height:100%;
   display: none;
 }
+.product_left1{
+  width:50%;
+  position: relative;
+}
+.product_left1>div{
+  position: absolute;
+  width:100%;
+  height:100%;
+  display: none;
+}
 .product_right{
   width:50%;
+  overflow-y: scroll;
 }
 .product_right>div{
   margin:10px;
 }
 
 @media (max-width: 700px) {
-  .product_left,.product_right{
+  .product_left,.product_right,.product_left1{
     width:100%;
   }
   .product_info1{
@@ -391,23 +409,23 @@ color:white;
   font-weight: 800;
   background-color: #212A3E;
 }
-.product_info1_form_other_title{
-  background-color: #4c5a77;
-  color:white;
-  padding:3px;
-}
-.product_info1_form_other_content{
-  border:1px solid #212A3E;
+
+.product_info1_img_select{
   display: flex;
-  flex-flow:row nowrap;
+  flex-flow:row wrap;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.product_info1_form_other_content>div{
+.product_info1_img_select>div{
+  width:70px;
+  height:70px;
+  margin:10px;
+  background-color: #4c5a77;
   background-position: center;
   background-size: cover;
-  width:90%;
-  background-color: #4c5a77;
-  margin:3px;
 }
+
+
 .product_info_nav{
   display: flex;
   flex-flow:row nowrap;
@@ -734,4 +752,15 @@ color:white;
   padding:10px;
   font-size:14px;
   font-weight: 100;
+}
+
+/* _______________________________________________________________________ */
+
+#registration{
+  margin-top:60px;
+}
+#registration_in{
+  height: fit-content;
+  z-index:30;
+  overflow: scroll;
 }

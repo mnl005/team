@@ -111,6 +111,14 @@ function nav_view() {
 function product_img() {
   $(".product_left").height($(".product_left").width());
   $(".product_right").height($(".product_left").width());
+  $(".product_left1").height($(".product_left1").width());
+  $(".product_left").each(function () {
+    $(this).height($(this).width());
+  });
+  $(".product_right").each(function () {
+    $(this).height($(this).width());
+  });
+
   $(".exp_img_auto_l>div").each(function () {
     $(this).height($(this).width());
   });
@@ -132,24 +140,13 @@ function product_img() {
   $(".product_info1_form_other_content>div").each(function () {
     $(this).height($(this).width());
   });
-  console.log($(".product_right").width());
-  if ($(".product_right").width() < 470) {
-    $(".product_info1_form_other_content").hide();
-    $(".product_info1_form_other_title").hide();
-  } else {
-    $(".product_info1_form_other_content").show();
-    $(".product_info1_form_other_title").show();
-    $(".product_info1_form_other_content>div").each(function () {
-      $(this).height($(this).width());
-    });
-  }
-}
+  
+
+} 
 
 $(document).ready(function () {
+ 
   nav_view();
-  //레이아웃 크기조절
-
-  //상품디테일 이미지 크기조절
   product_img();
 
   //베너순환
@@ -160,19 +157,28 @@ $(document).ready(function () {
       ? currentItem.next()
       : $(".product_left>div:first");
     currentItem.show();
-  }, 3000); // 1초마다 실행
+  }, 3000);
+
+  let currentItem1 = $(".product_left1>div:first").show();
+  setInterval(function () {
+    currentItem1.hide();
+    currentItem1 = currentItem1.next().length
+      ? currentItem1.next()
+      : $(".product_left1>div:first");
+      currentItem1.show();
+  }, 3000);
 
   $(window).resize(function () {
     console.log("screan : " + $(window).width());
-    $(".product_left").height($(".product_left").width());
-    $(".product_right").height($(".product_left").width());
-    //상품디테일 이미지 크기조절
     product_img();
     nav_view();
   });
 
   //클릭이벤트
   $(document).on("click", ".button", async function (event) {
+
+  
+
     let json = $(this).data("json");
 
     if (json.url !== "none") {
@@ -188,6 +194,10 @@ $(document).ready(function () {
     console.log("event_type : " + json.event_type);
     console.log("event_data : " + json.event_data);
     switch (json.event_type) {
+      case "nav":
+        $(".nav_com").css("display","none");
+        $("#" + json.event_data).css("display","block");
+      break;
       case "pop":
         $(this).closest(".pop").slideToggle(500);
         break;
@@ -195,7 +205,6 @@ $(document).ready(function () {
         $("#" + json.event_data).slideToggle(500);
         product_img();
         break;
-
       case "product_type_selecter":
         $("#product_type_selecter_in").stop().slideToggle();
         break;
@@ -242,6 +251,7 @@ $(document).ready(function () {
         console.log("이벤트타입 없음");
         break;
     }
+    product_img();
   });
 
   //호버이벤트
@@ -260,8 +270,10 @@ $(document).ready(function () {
   let lastScrollTop = 0;
 
   $(document).scroll(function () {
-    let currentScrollTop = $(this).scrollTop();
 
+    let currentScrollTop = $(this).scrollTop();
+    console.log(currentScrollTop);
+    console.log(lastScrollTop);
     if (currentScrollTop > lastScrollTop) {
       // 스크롤이 내려갈 때
       $(".nav1").fadeOut();
