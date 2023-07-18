@@ -1,7 +1,8 @@
 let send_form_run = false;
 let send_run = false;
 let isRotated = false;
-let product_make_form_button_index = 0;
+let product_make_form_button_index1 = 0;
+let product_make_form_button_index2 = 0;
 // 폼전송
 async function send_form(element) {
   loading();
@@ -148,6 +149,8 @@ function product_img() {
 
 $(document).ready(function () {
  
+  
+  img_view();
   nav_view();
   product_img();
 
@@ -171,16 +174,13 @@ $(document).ready(function () {
   }, 3000);
 
   $(window).resize(function () {
-    console.log("screan : " + $(window).width());
+    // console.log("screan : " + $(window).width());
     product_img();
     nav_view();
   });
 
   //클릭이벤트
   $(document).on("click", ".button", async function (event) {
-
-  
-
     let json = $(this).data("json");
 
     if (json.url !== "none") {
@@ -203,7 +203,6 @@ $(document).ready(function () {
       case "pop":
         $(this).closest(".pop").slideToggle(500);
         break;
-
       case "delete":
         $(this).closest(".delete").slideToggle().delay(1000).queue(function(next) {
           $(this).closest(".delete").remove();
@@ -279,34 +278,87 @@ $(document).ready(function () {
         $("#product_make_form_type2").slideToggle().css("display","flex");
 
       break;
-      case "product_make_form_button":
-      if(json.event_data === 'right' && product_make_form_button_index < 11){
-        $('#product_make_form_select1').children().eq(product_make_form_button_index).stop().slideToggle();
-        $('#product_make_form_select1').children().eq(product_make_form_button_index + 1).stop().slideToggle();
-        product_make_form_button_index +=1;
-        console.log(product_make_form_button_index);
+      case "product_make_form_button1":
+      if(json.event_data === 'right' && product_make_form_button_index1 < 11){
+        $('#product_make_form_select1').children().eq(product_make_form_button_index1).stop().slideToggle();
+        $('#product_make_form_select1').children().eq(product_make_form_button_index1 + 1).stop().slideToggle();
+        product_make_form_button_index1 +=1;
+        console.log(product_make_form_button_index1);
       }
-      else if(json.event_data === 'left' && product_make_form_button_index > 0){
-        $('#product_make_form_select1').children().eq(product_make_form_button_index).stop().slideToggle();
-        $('#product_make_form_select1').children().eq(product_make_form_button_index - 1).stop().slideToggle();
-        product_make_form_button_index -=1;
-        console.log(product_make_form_button_index);
+      else if(json.event_data === 'left' && product_make_form_button_index1 > 0){
+        $('#product_make_form_select1').children().eq(product_make_form_button_index1).stop().slideToggle();
+        $('#product_make_form_select1').children().eq(product_make_form_button_index1 - 1).stop().slideToggle();
+        product_make_form_button_index1 -=1;
+        console.log(product_make_form_button_index1);
       }
       break;
+      case "product_make_form_button2":
+      if(json.event_data === 'right' && product_make_form_button_index2 < 5){
+        $('#product_make_form_select2').children().eq(product_make_form_button_index2).stop().slideToggle();
+        $('#product_make_form_select2').children().eq(product_make_form_button_index2 + 1).stop().slideToggle();
+        product_make_form_button_index2 +=1;
+        console.log(product_make_form_button_index2);
+      }
+      else if(json.event_data === 'left' && product_make_form_button_index2 > 0){
+        $('#product_make_form_select2').children().eq(product_make_form_button_index2).stop().slideToggle();
+        $('#product_make_form_select2').children().eq(product_make_form_button_index2 - 1).stop().slideToggle();
+        product_make_form_button_index2 -=1;
+        console.log(product_make_form_button_index2);
+      }
+    break;
       case "product_make_form_text":
         let text_option = $("#product_make_form_select1> div:visible").data("json").data;
         console.log("text_option ::: " + text_option);
         let text_value = $("#product_make_form_select1_value").val();
         console.log("text_value ::: " + text_value);
-        let divElement = $("<div>").addClass(text_option).addClass("delete").text(text_value);
-        divElement.append(`
+        let div_text = $("<div>").addClass(text_option).addClass("delete").text(text_value);
+        div_text.append(`
         <div class="button delete_button"
         data-json='{"event_type": "delete", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
         >삭제</div>
         `);
-        $(".product_detail_explanation").append(divElement);
+        $(".product_detail_explanation").append(div_text);
       break;
       case "product_make_form_img":
+   
+      let img_option = $("#product_make_form_select2> div:visible").data("json").data;
+
+        if(img_option !== 'exp_img_auto_l' && img_option !== 'exp_img_auto_m' && img_option !== 'exp_img_auto_s'){
+          console.log("text_option ::: " + img_option);
+          let img_view = $('#img_view');
+          let firstChild = img_view.children().first();
+          let backgroundImage = firstChild.css('background-image');
+          
+          let div_img = $("<div>", {
+            class: img_option + " delete",
+            style: "background-image: " + backgroundImage
+          });
+          div_img.append(`
+          <span class="button delete_button"
+          data-json='{"event_type": "delete", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+          >삭제</span>
+          `);
+          $(".product_detail_explanation").append(div_img);
+          product_img();
+        }else{
+          console.log("asdf");
+          console.log("text_option ::: " + img_option);
+          
+          let div_img = $("<div>").addClass(img_option).addClass("delete");
+          let img_view = $('#img_view');
+          img_view.children().each(function() {
+            const cloneElement = $(this).clone();
+            div_img.append(cloneElement);
+          });
+          div_img.append(`
+          <span class="button delete_button"
+          data-json='{"event_type": "delete", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+          >삭제</span>
+          `);
+          $(".product_detail_explanation").append(div_img);
+          product_img();
+        }
+
       break;
       default:
         console.log("이벤트타입 없음");
@@ -354,6 +406,23 @@ $(document).ready(function () {
   });
 });
 
+function img_view(){
+  $('#img_add').change(function() {
+    $('#img_view').empty();
+    const files = Array.from($(this)[0].files);
+    const imgView = $('#img_view');
+  
+    files.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const imageUrl = e.target.result;
+        const div = $('<div>').css('background-image', `url(${imageUrl})`);
+        imgView.append(div);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+}
 function rotateBanner() {
   var banner = $(".banner");
   var activeElement = banner.find(".active");
@@ -366,5 +435,4 @@ function rotateBanner() {
   activeElement.removeClass("active");
   nextElement.addClass("active");
 }
-
 setInterval(rotateBanner, 3000);
