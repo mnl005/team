@@ -3,6 +3,7 @@ let send_run = false;
 let isRotated = false;
 let product_make_form_button_index1 = 0;
 let product_make_form_button_index2 = 0;
+
 // 폼전송
 async function send_form(element) {
   loading();
@@ -317,7 +318,7 @@ $(document).ready(function () {
         data-json='{"event_type": "delete", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
         >삭제</div>
         `);
-        $(".product_detail_explanation").append(div_text);
+        $(".product_detail_explanation_ex").append(div_text);
       break;
       case "product_make_form_img":
    
@@ -338,7 +339,7 @@ $(document).ready(function () {
           data-json='{"event_type": "delete", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
           >삭제</span>
           `);
-          $(".product_detail_explanation").append(div_img);
+          $(".product_detail_explanation_ex").append(div_img);
           product_img();
         }else{
           console.log("asdf");
@@ -355,11 +356,43 @@ $(document).ready(function () {
           data-json='{"event_type": "delete", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
           >삭제</span>
           `);
-          $(".product_detail_explanation").append(div_img);
+          $(".product_detail_explanation_ex").append(div_img);
           product_img();
         }
 
       break;
+      case "prdouct_add_done":
+
+        const childrenHTML = $('.product_detail_explanation_ex').children().map(function() {
+          return $(this)[0].outerHTML;
+        }).get().join('');
+        console.log(childrenHTML);
+
+        let product_data = {}
+        $('.input').each(function() {
+          let name = $(this).attr('name');
+          let value = $(this).val();
+          product_data[name] = value;
+        });
+        console.log(product_data);
+      break;
+      case "dot":
+        $(this).closest(".registration_dot").children(".registration_dot_box").find(".dot-bubble").removeClass("dot-bubble");
+        $(this).closest(".registration_dot").children(".registration_dot_box").css({
+          "background-color": "rgb(83, 109, 255);",
+          "color": "white"
+        });
+          
+      $(this).css({
+        "background-color": "white",
+        "color": "rgb(83, 109, 255)"
+      });
+        
+        $(this).children(".dot-bubbles").addClass("dot-bubble");
+      break;
+     
+     
+     
       default:
         console.log("이벤트타입 없음");
         break;

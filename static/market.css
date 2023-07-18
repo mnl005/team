@@ -1,3 +1,121 @@
+/* test */
+@keyframes move_wave {
+  0% {
+      transform: translateX(0) translateZ(0) scaleY(1)
+  }
+  50% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.55)
+  }
+  100% {
+      transform: translateX(-50%) translateZ(0) scaleY(1)
+  }
+}
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  
+}
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+  background-image: linear-gradient(to top, #464ec4 20%, #27273c 80%);
+}
+.bgTop {
+  z-index: 15;
+  opacity: 0.5;
+}
+.bgMiddle {
+  z-index: 10;
+  opacity: 0.75;
+}
+.bgBottom {
+  z-index: 5;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+.waveTop {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+animation: move-wave 3s;
+ -webkit-animation: move-wave 3s;
+ -webkit-animation-delay: 1s;
+ animation-delay: 1s;
+}
+.waveMiddle {
+  background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 15s linear infinite;
+}
+/* testttttttttttttttttttttttttttttttttttttt */
+.dot-bubbles {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(66, 83, 235);
+}
+.dot-bubble {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(66, 83, 235);
+}
+
+.dot-bubble::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  background-color: rgb(86, 119, 230);
+  animation: wave-animation 1s linear infinite;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+/* ___________________________________________________________ */
+
+/* _________________________________________________________________________ */
+
+
 * {
   margin: 0px;
   padding: 0px;
@@ -23,8 +141,8 @@
   text-align: center;
   height:fit-content;
   position: absolute;
-  bottom:0%;
-  width:100%;
+  top:0;
+  left:0;
 }.delete_button:hover{
   background-color: rgb(201, 0, 0);
 }
@@ -54,10 +172,10 @@
 }
 @media (max-width: 500px) {
   .button{
-    font-size:14px;
+    font-size:16px;
   }
 }
-#product,#home,#blog,#qna{
+#product,#home,#qna,#registration{
   display: none;
 }
 .nav1{
@@ -141,7 +259,6 @@
 }
 /* _________________________________________________________________ */
 .banner{
-  background-image: url("/static/img/black-1072366.jpg");
   background-position: center;
   background-size: cover;
   width:100%;
@@ -150,29 +267,18 @@
   flex-flow:column nowrap;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .banner_text1{
-
   color:white;
   font-size:10vw;
+  z-index: 20;
 }
 .banner_text2{
   color:white;
   font-size:40px;
   font-size:5vw;
-}
-.banner_btn{
-  margin-top:30px;
-  width:120px;
-  color:white;
-  background-color: #1b2333;
-  padding:10px;
-  font-size:16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow:row nowrap;
-  cursor: pointer;
+  z-index: 20;
 }
 @media (min-width: 700px) {
   .banner_text1{
@@ -508,52 +614,68 @@ color:white;
 .exp_text_auto_l{
   text-align: center;
   font-size: 3vw;
+  position: relative;
 }
 .exp_text_auto_m{
   text-align: center;
   font-size: 2.5vw;
+  position: relative;
 }
 .exp_text_auto_s{
   text-align: center;
   font-size: 2vw;
+  position: relative;
 }
 .exp_text_static_l{
   text-align: center;
   font-size:40px;
+  position: relative;
 }
 .exp_text_static_m{
   text-align: center;
   font-size:30px;
+    position: relative;
 }
 .exp_text_static_s{
   text-align: center;
   font-size:20px;
+  position: relative;
 }
 .exp_text_static_ss{
   text-align: center;
   font-size:15px;
+  position: relative;
 }
 .exp_text_box1{
   padding:10px;
+  position: relative;
 }
 .exp_text_box2{
   padding:10px;
   text-align: center;
+  position: relative;
 }
 .exp_padding_l{
+  height:1px;
   margin:auto;
   margin-top:100px;
   color:red;
+  position: relative;
+  background-color: red;
 }
 .exp_padding_m{
+  height:1px;
   margin:auto;
   margin-top:50px;
   color:red;
+  position: relative;
 }
 .exp_padding_s{
+  height:1px;
   margin:auto;
   margin-top:10px;
   color:red;
+  position: relative;
 }
 .exp_img_auto_l{
   display: flex;
@@ -799,6 +921,7 @@ color:white;
   justify-content: center;
   padding:10px;
   position: relative;
+  display: none;
 }
 .product_make_form_title{
   font-size:20px;
@@ -913,3 +1036,29 @@ color:white;
   background-position: center;
   background-size:cover;
  }
+ .registration_dot{
+  display: flex;
+  flex-flow:row nowrap;
+  margin-bottom:40px;
+ }
+ .registration_dot>div{
+  flex-grow:1;
+  display: flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  justify-content: center;
+  padding-top:30px;
+  padding-bottom:30px;
+  background-color: rgb(83, 109, 255);
+  color:white;
+ }
+.registration_dot>div:first-child{
+  background-color: white;
+  color:rgb(83, 109, 255);
+}
+
+.registration_dot>div{
+  font-weight: 800;
+  font-size:20px;
+  margin-top:5px;
+}
