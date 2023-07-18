@@ -246,7 +246,9 @@ $(document).ready(function () {
       case "product_review_box_grow_toggle":
         $(this).siblings(".product_review_box_one_detial").slideToggle();
         break;
+      case "registration_form_button":
 
+      $("#product_make_form").stop().slideToggle();
       default:
         console.log("이벤트타입 없음");
         break;
