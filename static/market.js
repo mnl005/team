@@ -1,5 +1,7 @@
 let send_form_run = false;
 let send_run = false;
+let isRotated = false;
+let product_make_form_button_index = 0;
 // 폼전송
 async function send_form(element) {
   loading();
@@ -201,6 +203,13 @@ $(document).ready(function () {
       case "pop":
         $(this).closest(".pop").slideToggle(500);
         break;
+
+      case "delete":
+        $(this).closest(".delete").slideToggle().delay(1000).queue(function(next) {
+          $(this).closest(".delete").remove();
+          next();
+        });     
+        break;
       case "open":
         $("#" + json.event_data).slideToggle(500);
         product_img();
@@ -247,13 +256,63 @@ $(document).ready(function () {
         $(this).siblings(".product_review_box_one_detial").slideToggle();
         break;
       case "registration_form_button":
+        $("#product_make_form").stop().slideToggle();
+      break;
+      case "product_make_form_toggle":
+        let element = $(this);
+     
+        let rotateValue = isRotated ? '0turn' : '1turn';
+        $(this).animate({
+          rotate: rotateValue
+        }, {
+          duration: 400,
+          easing: 'easeInOutQuad',
+          step: function(now) {
+            element.css('transform', 'rotate(' + now + 'deg)');
+          },
+          complete: function() {
+            isRotated = !isRotated;
+          }
+        });
+        
+        $("#product_make_form_type1").slideToggle();
+        $("#product_make_form_type2").slideToggle().css("display","flex");
 
-      $("#product_make_form").stop().slideToggle();
+      break;
+      case "product_make_form_button":
+      if(json.event_data === 'right' && product_make_form_button_index < 11){
+        $('#product_make_form_select1').children().eq(product_make_form_button_index).stop().slideToggle();
+        $('#product_make_form_select1').children().eq(product_make_form_button_index + 1).stop().slideToggle();
+        product_make_form_button_index +=1;
+        console.log(product_make_form_button_index);
+      }
+      else if(json.event_data === 'left' && product_make_form_button_index > 0){
+        $('#product_make_form_select1').children().eq(product_make_form_button_index).stop().slideToggle();
+        $('#product_make_form_select1').children().eq(product_make_form_button_index - 1).stop().slideToggle();
+        product_make_form_button_index -=1;
+        console.log(product_make_form_button_index);
+      }
+      break;
+      case "product_make_form_text":
+        let text_option = $("#product_make_form_select1> div:visible").data("json").data;
+        console.log("text_option ::: " + text_option);
+        let text_value = $("#product_make_form_select1_value").val();
+        console.log("text_value ::: " + text_value);
+        let divElement = $("<div>").addClass(text_option).addClass("delete").text(text_value);
+        divElement.append(`
+        <div class="button delete_button"
+        data-json='{"event_type": "delete", "event_data": "none", "url": "none", "type": "none", "data": "none"}'
+        >삭제</div>
+        `);
+        $(".product_detail_explanation").append(divElement);
+      break;
+      case "product_make_form_img":
+      break;
       default:
         console.log("이벤트타입 없음");
         break;
     }
-    product_img();
+    // product_img();
   });
 
   //호버이벤트
@@ -274,8 +333,8 @@ $(document).ready(function () {
   $(document).scroll(function () {
 
     let currentScrollTop = $(this).scrollTop();
-    console.log(currentScrollTop);
-    console.log(lastScrollTop);
+    // console.log(currentScrollTop);
+    // console.log(lastScrollTop);
     if (currentScrollTop > lastScrollTop) {
       // 스크롤이 내려갈 때
       $(".nav1").fadeOut();
