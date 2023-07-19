@@ -70,48 +70,6 @@ animation: move-wave 3s;
   animation: move_wave 15s linear infinite;
 }
 /* testttttttttttttttttttttttttttttttttttttt */
-.dot-bubbles {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgb(66, 83, 235);
-}
-.dot-bubble {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgb(66, 83, 235);
-}
-
-.dot-bubble::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  border-radius: 50%;
-  background-color: rgb(86, 119, 230);
-  animation: wave-animation 1s linear infinite;
-}
-
-@keyframes wave-animation {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-/* ___________________________________________________________ */
 
 /* _________________________________________________________________________ */
 
@@ -175,7 +133,7 @@ animation: move-wave 3s;
     font-size:16px;
   }
 }
-#product,#home,#qna,#registration{
+#product,#blog,#qna,#registration{
   display: none;
 }
 .nav1{
@@ -415,7 +373,7 @@ animation: move-wave 3s;
 .product_info1{
   display: flex;
   flex-flow:row wrap;
-  margin:30px;
+  margin:50px;
 }
 .product_left{
   width:50%;
@@ -588,12 +546,17 @@ color:white;
 .prduct_detail_table{
   display: flex;
   flex-flow:column nowrap;
+  max-width:400px;
+  margin:auto;
+  
 }
 .prduct_detail_top{
   background-color: #212A3E;
   color:white;
   padding:10px;
   font-size:25px;
+  max-width:400px;
+  margin:auto;
 }
 .prduct_detail_table>div{
   border:1px solid #212A3E;
@@ -1036,29 +999,25 @@ color:white;
   background-position: center;
   background-size:cover;
  }
- .registration_dot{
+ /* _____________________________________________ */
+ #timeline {
   display: flex;
-  flex-flow:row nowrap;
-  margin-bottom:40px;
- }
- .registration_dot>div{
-  flex-grow:1;
-  display: flex;
-  flex-flow:column nowrap;
-  align-items: center;
-  justify-content: center;
-  padding-top:30px;
-  padding-bottom:30px;
-  background-color: rgb(83, 109, 255);
-  color:white;
- }
-.registration_dot>div:first-child{
-  background-color: white;
-  color:rgb(83, 109, 255);
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  height: 100px;
 }
 
-.registration_dot>div{
-  font-weight: 800;
-  font-size:20px;
-  margin-top:5px;
+.section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
 }
+
+.filled {
+  background-color: #3498db;
+}
+
+

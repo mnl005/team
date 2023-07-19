@@ -113,6 +113,7 @@ function nav_view() {
 }
 //상품디테일 이미지 크기조절
 function product_img() {
+  console.log("product_img");
   $(".product_left").height($(".product_left").width());
   $(".product_right").height($(".product_left").width());
   $(".product_left1").height($(".product_left1").width());
@@ -149,11 +150,11 @@ function product_img() {
 } 
 
 $(document).ready(function () {
- 
-  
+
+  product_img();
   img_view();
   nav_view();
-  product_img();
+
 
   //베너순환
   let currentItem = $(".product_left>div:first").show();
@@ -200,6 +201,7 @@ $(document).ready(function () {
       case "nav":
         $(".nav_com").css("display","none");
         $("#" + json.event_data).css("display","block");
+        product_img();
       break;
       case "pop":
         $(this).closest(".pop").slideToggle(500);
