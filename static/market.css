@@ -133,7 +133,7 @@ animation: move-wave 3s;
     font-size:16px;
   }
 }
-#product,#blog,#qna,#registration{
+#product,#blog,#qna,#home,#registration{
   display: none;
 }
 .nav1{
@@ -341,7 +341,6 @@ animation: move-wave 3s;
   font-weight: 800;
 }
 .product_price{
-  color:green;
   font-weight: 500;
 }
 .product_date{
@@ -918,16 +917,17 @@ color:white;
   padding:10px;
 }
 #registration_form{
-  position: fixed;
-  z-index:50;
-  top:10%;
+  max-width:500px;
+  margin:auto;
 }
 #registration_form_button{
+  width:100%;
+  background-color:#213253;
+  color:white;
+  text-align: center;
   font-size:30px;
-  padding:4px;
-  color:#000000;
-  background-color: rgba(200,200,200,0.3);
 }
+
 .product_add_done{
   background-color: #9732f5;
   cursor: pointer;
@@ -1000,24 +1000,225 @@ color:white;
   background-size:cover;
  }
  /* _____________________________________________ */
+
  #timeline {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #f0f0f0;
-  height: 100px;
+  height: fit-content;
 }
 
 .section {
+  position: relative;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  background: linear-gradient(90deg, #3498db 50%, #f0f0f0 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  transition: all 0.5s ease;
+  flex-flow:column nowrap;
+  height:100px;
 }
-
 .filled {
-  background-color: #3498db;
+  background-position: left;
 }
 
+.unfilled {
+  background-position: right;
+}
+.wornning1{
+  background-color: red;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+  font-weight: 800;
+  display: none;
+}
+.timeline_icon{
+  color:white;
+}
+.timeline_text{
+  color:white;
+  margin-top:10px;
+  word-wrap: none;
+}
 
+/* product_info */
+.registration_product_info_title{
+  margin:auto;
+  margin-top:20px;
+  max-width:500px;
+  background-color: #213253;
+  color:white;
+  padding-top:14px;
+  padding-bottom:14px;
+  padding-left:10px;
+  font-size:17px;
+}
+.registration_product_info_table{
+  margin:auto;
+  max-width:500px;
+}
+.registration_product_info_table>div{
+  display: flex;
+  flex-flow:row nowrap;
+  width:100%;
+  border-bottom:1px solid black;
+}
+.registration_product_info_table>div>div:nth-child(1){
+  width:30%;
+  text-align: center;
+  padding-top:4px;
+  padding-bottom:4px;
+  background-color: #1b2333;
+  color:white;
+}
+.registration_product_info_table>div>input{
+  width:70%;
+  border-style: none;
+}
+.registration_product_info_button{
+  width:fit-content;
+  padding:5px;
+  margin:auto;
+  background-color: #464ec4;
+  color:white;
+  margin-top:10px;
+}
+.registration_product_info_option{
+  margin:auto;
+  max-width:500px;
+}
+
+.wornning2{
+  background-color: red;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+  font-weight: 800;
+  display: none;
+}
+.registration_product_info_option_head{
+  display: flex;
+  flex-flow:row nowrap;
+  border-bottom:1px solid black;
+}
+.registration_product_info_option_head>div{
+  flex-grow:1;
+  padding:5px;
+  text-align: center;
+  background-color: #27273c;
+  color:white;
+}
+.registration_product_info_option_body_one{
+  display: flex;
+  flex-flow:row nowrap;
+}
+.registration_product_info_option_body_one1{
+  display: flex;
+  flex-flow:row nowrap;
+}
+.registration_product_info_option_body_one>input{
+  flex-grow:1;
+  padding:4px;
+}
+.registration_product_info_option_body_one1>div{
+  flex-grow:1;
+  padding:4px;
+  text-align: center;
+  width:50%;
+}
+.registration_product_info_option_body_one1>div:nth-child(1){
+  background-color: #213253;
+  color:white;
+}
+.prdouct_info_flex{
+  display: flex;
+  flex-flow:row nowrap;
+  margin:auto;
+  max-width:500px;
+}
+.prdouct_info_flex>span:nth-child(1){
+  width:50%;
+  background-color: rgb(46, 46, 196);
+  color:white;
+  text-align: center;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.prdouct_info_flex>span:nth-child(2){
+
+  width:50%;
+  background-color: rgb(180, 47, 47);
+  color:white;
+  text-align: center;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.wornning3{
+  background-color: red;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+  font-weight: 800;
+  display: none;
+}
+.product_detail_explanation_title{
+  display: flex;
+  flex-flow:row nowrap;
+  padding:10px;
+  align-items: center;
+  justify-content: center;
+  border-bottom:4px solid black;
+  margin-bottom:20px;
+}
+.registration_setting_title{
+  margin-top:20px;
+  background-color: #3498db;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+  font-weight: 800;
+}
+.product_detail_explanation{
+  display: none;
+}
+#registration_setting{
+  display: none;
+}
+#registration_done{
+  display: none;
+}
+.registration_done_title{
+  margin-top:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+  font-weight: 800;
+}
+.registration_done_button{
+  width:fit-content;
+  padding:5px;
+  margin:auto;
+  background-color: #464ec4;
+  color:white;
+  margin-top:10px;
+}
+
+/* ______________________________ */
+#board{
+  margin-top:60px;
+}
