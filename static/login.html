@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            border:1px solid black;
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+        }
+
+        form{
+            display: flex;
+            flex-flow:column nowrap;
+            max-width:400px;
+            height:fit-content;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        form>input, form,button{
+            width:80%;
+            margin-top:10px;
+            padding:7px;
+            font-size:16px;
+        }
+        form>button{
+            background-color: rgb(74, 131, 238);
+            color:white;
+            cursor: pointer;
+        }
+        a{
+            background-color: yellow;
+            border-style: none;
+            width:80%;
+            margin-top:10px;
+            margin-bottom:10px;
+            text-align: center;
+            color:black;
+            text-decoration: none;
+            padding-top:7px;
+            padding-bottom:7px;
+            cursor: pointer;
+            font-size:16px;
+        }
+        label{
+            font-size:30px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label>로그인</label>
+        <input type="text" name="id" placeholder="id">
+        <input type="text" name="pwd" placeholder="pwd">
+        <button type="submit">로그인</button>
+        <a id="kakao" href="/kakao" type="submit">카카오 로그인</a>
+    </form>
+</body>
+</html>
