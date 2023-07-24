@@ -1,5 +1,5 @@
 # Project Title
-
+![alt text](./images/a1.png)
 간단한 프로젝트 설명이 위치합니다. 프로젝트의 목표나 주요 기능 등에 대해 설명할 수 있습니다.
 
 ## Getting Started
